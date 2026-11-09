@@ -1,0 +1,155 @@
+--- IMAGE 1 ---
+
+RX (Receive): An onboard indicator LED that flashes when the Arduino is actively receiving data from a computer or another serial device via Digital Pin 0.
+
+TX (Transmit): An onboard indicator LED that flashes when the Arduino is actively sending (transmitting) data to a computer or another serial device via Digital Pin 1.
+
+L (Built-in LED): An onboard light-emitting diode hardwired directly to Digital Pin 13 on the Arduino board, used as a visual indicator to test code without external hardware.
+
+Write this code to test your Arduino:
+
+void setup() {
+
+  // Set the built-in LED pin (Pin 13) as an OUTPUT
+
+  pinMode(13, OUTPUT);
+
+}
+
+void loop() {
+
+  digitalWrite(13, HIGH); // Turn the "L" LED ON
+
+  delay(1000);            // Wait for 1 second (1000 milliseconds)
+
+  digitalWrite(13, LOW);  // Turn the "L" LED OFF
+
+  delay(1000);            // Wait for 1 second (1000 milliseconds)
+
+}
+
+.......................
+
+How It Works:
+
+pinMode(13, OUTPUT); configures Digital Pin 13 to supply power as an output interface.
+
+digitalWrite(13, HIGH); delivers 5V to Digital Pin 13, illuminating the "L" LED.
+
+delay(1000); pauses code execution for 1000 milliseconds (1 second).
+
+digitalWrite(13, LOW); drops the voltage on Digital Pin 13 to 0V, turning the "L" LED off.
+
+---------------------------------------------------------
+
+
+--- IMAGE 2 ---
+
+[Table]
+Color | Tech Name | What it does:
+1 (Red) | Reset Button | Restarts the Arduino
+2 (Orange) | USB | Program your Arduino from your Computer
+3 (Yellow) | Indicator LEDs | Shows the user what the Arduino is doing
+4 (Green) | DC Power | Power your project - without USB
+5 (Dark Green) | Power Pins | Connect power to your circuit
+6 (Cyan) | Analog Pins | Connect sensors to your Arduino
+7 (Dark Blue) | ATmega32u4 | Brain of your Computer
+8 (Purple) | ISP Connector | Update bootloader (software) on the Arduino
+9 (Pink) | Digital I/O | Connect sensors or actuators to your Arduino
+
+RX (Receive): An onboard indicator LED that flashes when the Arduino is actively...
+
+---------------------------------------------------------
+
+
+--- IMAGE 3 ---
+
+[Top cut-off text box: Flow arrow HC-SR04 -> Arduino -> Actuators -> DC Motors]
+
+---------------------------------------------------------
+
+3. Introduction to Arduino
+
+Arduino is an open-source electronics platform based on a programmable microcontroller. It is widely used in robotics, automation, electronics, and educational projects.
+
+The Arduino board can receive information from sensors and other input devices, process this information according to a program, and control output devices such as LEDs, buzzers, and motors.
+
+The main parts of the Arduino UNO include:
+
+1. Microcontroller – executes the program.
+2. Digital I/O pins – used for digital input and output.
+3. Analog input pins – used to read analog signals.
+4. USB port – used to program the Arduino and provide communication with a computer.
+5. Power pins – provide 5 V, 3.3 V, and GND connections.
+6. Reset button – restarts the program.
+7. Power connector – can be used to supply external power.
+
+---------------------------------------------------------
+
+
+--- IMAGE 4 ---
+
+Prepared by:
+
+Eng. Marwa Jalal
+
+Introduction to Robotics & Arduino
+
+Introduction to Robotics
+
+Robotics is an engineering field that combines mechanical systems, electronics, sensors, actuators, and computer programming to design and control machines called robots.
+
+1. A robot can be designed to:
+
+- Sense its environment using sensors.
+- Process information using a controller.
+- Perform actions using motors or actuators.
+- Operate automatically or according to programmed instructions.
+
+2. A basic robotic system can be represented as:
+
+Sensors -> Controller -> Actuators
+
+For example, in an obstacle-avoiding robot:
+
+- Ultrasonic sensor detects an obstacle.
+- Arduino processes the distance information.
+- DC motors move the robot in the appropriate direction.
+
+[Diagram Text:]
+Analysis of an Obstacle-Avoiding Robotic System
+STAGE 1: INPUT (SENSORS)
+- Transmitter
+- Receiver
+- Echo
+- Pulse
+- Trig
+- OBSTACLE
+- Distance: ~ 20 cm
+
+STAGE 2: ANALYSIS (CONTROLLER)
+- Analog Signal
+- [Code snippet box: if (obstacleAvoidance) { distance = read_sensor(); if (distance < 20) { move_robot(); } }]
+- Arduino UNO (CONTROLLER)
+
+STAGE 3: ACTION (ACTUATORS)
+- TURNING AWAY
+- DC Motor with Gearbox
+- ROBOT TURNING
+- Move Left (Away)
+
+STAGE 1: INPUT (SENSORS)
+- The ultrasonic sensor detects an obstacle in its path.
+
+STAGE 2: ANALYSIS (CONTROLLER)
+- The Arduino processes the detected distance data.
+
+STAGE 3: ACTION (ACTUATORS)
+- The DC motors move the robot in the correct direction.
+
+Flow arrow:
+HC-SR04 -> Arduino -> DC Motors
+
+---------------------------------------------------------
+
+3. Introduction to Arduino
