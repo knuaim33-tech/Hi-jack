@@ -1,0 +1,80 @@
+=========================================================
+ARDUINO LAB CODES
+=========================================================
+
+--- PROJECT 1: 3-LED Sequence ---
+(Note: This code was from the first image, which did not have an explicit title, but indicates a sequence for three LEDs)
+
+void setup()
+{
+  pinMode(3,OUTPUT);
+  pinMode(10,OUTPUT);
+  pinMode(13,OUTPUT);
+}
+void loop()
+{
+  digitalWrite(3, HIGH);
+  digitalWrite(10, LOW);
+  digitalWrite(13, LOW);
+  delay(1000);
+  digitalWrite(3, LOW);
+  digitalWrite(10, HIGH);
+  digitalWrite(13, LOW);
+  delay(1000);
+  digitalWrite(3, LOW);
+  digitalWrite(10, LOW);
+  digitalWrite(13, HIGH);
+  delay(1000);
+}
+
+
+=========================================================
+EXPERIMENT 2: PWM
+=========================================================
+
+int LED = 9;
+int i = 0;
+void setup(){
+  pinMode(LED,OUTPUT);}
+void loop(){
+  for (i=0;i<255;i++){
+    analogWrite(LED,i);
+    delay(10);}
+  for(i=255;i>0;i--){
+    analogWrite(LED,i);
+    delay(10);}}
+    
+
+=========================================================
+EXPERIMENT 3: RGB LED
+=========================================================
+
+int Blue = 6;
+int Green = 10;
+int Red = 11;
+void setup(){
+  pinMode(Blue,OUTPUT);
+  pinMode(Green,OUTPUT);
+  pinMode(Red,OUTPUT);
+}
+void loop(){
+  RGBcolor(255,0,0);
+  delay(2000);
+  RGBcolor(0,255,0);
+  delay(2000);
+  RGBcolor(0,0,255);
+  delay(2000);
+  RGBcolor(255,0,255);
+  delay(2000);
+  RGBcolor(255,255,0);
+  delay(2000);
+  RGBcolor(0,255,255);
+  delay(2000);
+  RGBcolor(255,255,255);
+  delay(2000);
+  RGBcolor(0,0,0);
+  delay(2000);}
+void RGBcolor(int red_light_value,int green_light_value,int blue_light_value){
+  analogWrite(Red,red_light_value);
+  analogWrite(Green,green_light_value);
+  analogWrite(Blue,blue_light_value);}
